@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+<style>
+  *{
+    padding: 0;
+    margin-right: 0;
+    box-sizing: border-box;
+  }
+
+  body{
+    background-color: black;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+  }
+  h1{
+    position: relative;
+    color: black;
+    -webkit-text-stroke: 0.3vw black;
+    font-size: 50px;
+    text-transform: uppercase;
+    font-weight: bolder;
+    
+
+  }
+  h1::before{
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+color:  white;
+-webkit-text-stroke: 0vw black;
+border-top: 4px dotted orange;
+border-bottom: 4px dotted  yellow;
+overflow: hidden;
+animation: animate 8s linear infinite;
+
+  }
+
+ 
+  @keyframes animate{
+	0%,10%,100%{
+    width: 0;
+  }
+	
+	70%,90%{
+		width:100%;
+	}
+}
+
+
+</style>
+
+
+
+</head>
+<body>
+  <h1 data-text="innocent" id="myname">innocent</h1>
+</body>
+</html>
